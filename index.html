@@ -14,7 +14,7 @@
     <div id="header">
         <div class="containt">
             <nav>
-                <img src="images/large.png" class="logo" id="mode-toggle">
+                <img src="images/large.png" class="logo" id="mode-toggle" alt="Toggle Image" onclick="toggleImage()">
                 <ul>
                     <li><a href="#header" class="haspc">Home</a></li>
                     <li><a href="#about" class="haspc">About</a></li>
@@ -27,8 +27,9 @@
                 <h1>Hi,<br> I'm <span class="hov">Shrikant</span> Deshmukh.</h1>
                 <p><br></p>
                 <p>a Software Developer</p>
-                <br>
-                <br>
+                
+                <a href="images/Shrikant Resume final.pdf" download class="btn btn2 hover-over">Download CV</a>
+
                 <br>
             </div>
                 
@@ -211,7 +212,6 @@
                                 <a href="https://www.threads.net/@deshmukhsofficial"><i
                                     class="fa-brands fa-threads fa-xl hover-effect"></i></a>
                                 </div>
-                                <a href="images/Shrikant Resume final.pdf" download class="btn btn2 hover-over">Download CV</a>
                                 <p><i><h2 class="hover-effect" style="color: #ff004f;">get in touch:</h2></i></p>
                             </div>
                 <div class="contact-right   "></div>
@@ -253,15 +253,22 @@
         body.classList.add(savedMode);
     }
 
+    const logo = document.getElementById("mode-toggle");
+
+   
     toggleButton.addEventListener("click", function() {
         body.classList.toggle("dark-mode");
         if (body.classList.contains("dark-mode")) {
             localStorage.setItem("mode", "dark-mode");
+            logo.src = "images/logodark.png";
         } else {
             localStorage.removeItem("mode");
+            logo.src = "images/large.png";
         }
     });
 });
+
+
 
     </script>
 
